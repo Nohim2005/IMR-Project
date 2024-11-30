@@ -1,0 +1,10 @@
+USE SupermarketPOS;
+
+CREATE TABLE Sales (
+    SaleID INT PRIMARY KEY IDENTITY(1,1),
+    SaleDateTime DATETIME DEFAULT GETDATE(),
+    CustomerID INT FOREIGN KEY REFERENCES Customer(CustomerID) ON DELETE SET NULL,
+    TotalAmount DECIMAL(10, 2) NOT NULL
+);
+
+
